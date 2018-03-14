@@ -1,10 +1,16 @@
 version: 2
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - bla
+
 jobs:
-   build:
+   bla:
      docker:
        - image: circleci/python:3-stretch-browsers
      steps:
        - checkout
-       - run: 
-           name: "Hi Step"
-           command: ./run.sh "hello 1"
+       - run: echo "hello world"
+
